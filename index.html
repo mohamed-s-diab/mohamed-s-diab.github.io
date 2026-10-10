@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Said Diab | Computational Biostatistics &amp; Evidence Synthesis</title>
-  <meta name="description" content="Personal academic laboratory and evidence synthesis portfolio of Mohamed Said Mohamed Diab (Lead Investigator, MTI Faculty of Medicine). Specialized in Network Meta-Analysis and Oncology Decision Analytics.">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <title>Mohamed Said Mohamed Diab | Under Development</title>
+  <meta name="description" content="Personal academic portfolio of Mohamed Said Mohamed Diab. Website is currently under active development.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,12 +12,11 @@
     :root {
       --bg-dark: #0B0E14;
       --bg-surface: #0D1117;
-      --bg-glass: rgba(22, 27, 34, 0.75);
-      --border-glass: rgba(48, 54, 61, 0.8);
+      --bg-glass: rgba(22, 27, 34, 0.7);
+      --border-glass: rgba(48, 54, 61, 0.7);
       --accent-blue: #2997FF;
       --accent-blue-hover: #0071E3;
-      --accent-green: #3FB950;
-      --accent-purple: #A371F7;
+      --accent-orange: #F0883E;
       --text-primary: #F0F6FC;
       --text-secondary: #8B949E;
       --text-muted: #6E7681;
@@ -38,163 +34,221 @@
       color: var(--text-primary);
       font-family: var(--font-family);
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      position: relative;
     }
 
     /* Ambient Background Glows */
     .ambient-glow-1 {
       position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0, 113, 227, 0.18) 0%, rgba(11, 14, 20, 0) 70%);
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(41, 151, 255, 0.14) 0%, rgba(11, 14, 20, 0) 70%);
       pointer-events: none;
       z-index: 0;
     }
 
     .ambient-glow-2 {
       position: absolute;
-      top: 600px;
-      left: -150px;
+      bottom: -100px;
+      right: 10%;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(163, 113, 247, 0.12) 0%, rgba(11, 14, 20, 0) 70%);
+      background: radial-gradient(circle, rgba(240, 136, 62, 0.08) 0%, rgba(11, 14, 20, 0) 70%);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Glass Navbar */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      background: rgba(11, 14, 20, 0.8);
-      border-bottom: 1px solid var(--border-glass);
-      padding: 16px 32px;
+    /* Header Nav */
+    header {
+      padding: 24px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      z-index: 10;
     }
 
-    .nav-brand {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
       font-weight: 700;
       font-size: 1.05rem;
       letter-spacing: -0.3px;
-      color: var(--text-primary);
-      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(41, 151, 255, 0.15);
+      border: 1px solid rgba(41, 151, 255, 0.35);
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-
-    .nav-brand span {
+      justify-content: center;
       color: var(--accent-blue);
+      font-weight: 800;
+      font-size: 14px;
     }
 
-    .nav-links {
+    /* Main Container */
+    main {
+      flex: 1;
       display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-blue);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
       position: relative;
       z-index: 1;
     }
 
-    /* Hero Section */
-    .hero {
-      padding: 80px 0 60px;
+    .construction-card {
+      max-width: 680px;
+      width: 100%;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+      animation: fadeIn 0.8s ease-out;
     }
 
-    .badge-tag {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Pulse Status Tag */
+    .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
+      gap: 10px;
+      padding: 7px 18px;
       border-radius: 999px;
-      background: rgba(41, 151, 255, 0.1);
-      border: 1px solid rgba(41, 151, 255, 0.3);
-      color: var(--accent-blue);
-      font-size: 0.78rem;
+      background: rgba(240, 136, 62, 0.1);
+      border: 1px solid rgba(240, 136, 62, 0.35);
+      color: var(--accent-orange);
+      font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
+      letter-spacing: 0.5px;
       margin-bottom: 24px;
     }
 
-    .badge-tag::before {
-      content: "";
-      width: 6px;
-      height: 6px;
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: var(--accent-blue);
+      background: var(--accent-orange);
+      box-shadow: 0 0 0 0 rgba(240, 136, 62, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(240, 136, 62, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(240, 136, 62, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(240, 136, 62, 0);
+      }
     }
 
     h1 {
-      font-size: 3.2rem;
+      font-size: 2.3rem;
       font-weight: 800;
-      letter-spacing: -1.2px;
-      line-height: 1.15;
-      margin-bottom: 16px;
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
       background: linear-gradient(180deg, #FFFFFF 0%, #C9D1D9 100%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-lead {
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      max-width: 780px;
-      margin-bottom: 16px;
-      font-weight: 400;
-      letter-spacing: -0.2px;
+    .author-title {
+      font-size: 1.05rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-bottom: 6px;
     }
 
-    .hero-affiliation {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .affiliation {
+      font-size: 0.9rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
-    .hero-cta {
+    .divider {
+      height: 1px;
+      background: var(--border-glass);
+      margin: 24px auto;
+      max-width: 480px;
+    }
+
+    .notice-text {
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .notice-text-ar {
+      font-size: 1.05rem;
+      color: #E6EDF3;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      direction: rtl;
+    }
+
+    .transparency-pill {
+      background: rgba(13, 17, 23, 0.8);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 24px 0 32px;
+      text-align: left;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .transparency-pill strong {
+      color: #E6EDF3;
+    }
+
+    /* Action Links */
+    .btn-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 48px;
+      gap: 12px;
+      justify-content: center;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 11px 22px;
+      padding: 10px 18px;
       border-radius: 10px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -203,7 +257,7 @@
     .btn-primary {
       background: var(--accent-blue-hover);
       color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(0, 113, 227, 0.35);
+      box-shadow: 0 4px 14px rgba(0, 113, 227, 0.3);
     }
 
     .btn-primary:hover {
@@ -212,7 +266,7 @@
     }
 
     .btn-secondary {
-      background: var(--bg-surface);
+      background: rgba(13, 17, 23, 0.9);
       border: 1px solid var(--border-glass);
       color: var(--text-primary);
     }
@@ -223,195 +277,15 @@
       transform: translateY(-1px);
     }
 
-    /* Glass Cards */
-    .card {
-      background: var(--bg-glass);
-      border: 1px solid var(--border-glass);
-      border-radius: 16px;
-      padding: 32px;
-      margin-bottom: 32px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .card:hover {
-      border-color: rgba(88, 166, 255, 0.4);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .card-header-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--accent-blue);
-      margin-bottom: 8px;
-    }
-
-    .card h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.6px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 24px;
-    }
-
-    /* Grid for Metrics */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .metric-pill {
-      background: rgba(13, 17, 23, 0.8);
-      border: 1px solid var(--border-glass);
-      border-radius: 12px;
-      padding: 16px 20px;
-    }
-
-    .metric-pill .val {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--accent-blue);
-      letter-spacing: -0.5px;
-    }
-
-    .metric-pill .lbl {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-top: 4px;
-    }
-
-    /* Exhibits Section */
-    .exhibits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-      gap: 20px;
-      margin-top: 24px;
-    }
-
-    .exhibit-item {
-      background: #0D1117;
-      border: 1px solid var(--border-glass);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    .exhibit-item:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent-blue);
-    }
-
-    .exhibit-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      background: #000;
-    }
-
-    .exhibit-item .caption {
-      padding: 16px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      border-top: 1px solid var(--border-glass);
-    }
-
-    .exhibit-item .caption strong {
-      color: var(--text-primary);
-    }
-
-    /* Methodological Rigor Matrix */
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 20px;
-      margin-top: 24px;
-    }
-
-    .method-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-glass);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .method-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .method-card ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .method-card li {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .method-card li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent-blue);
-    }
-
-    /* Citation Box */
-    .citation-box {
-      background: #0D1117;
-      border: 1px solid var(--border-glass);
-      border-radius: 12px;
-      padding: 20px;
-      font-family: monospace;
-      font-size: 0.82rem;
-      color: #C9D1D9;
-      overflow-x: auto;
-      position: relative;
-    }
-
-    .copy-btn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      padding: 6px 12px;
-      background: #21262D;
-      border: 1px solid #30363D;
-      border-radius: 6px;
-      color: #F0F6FC;
-      font-size: 0.75rem;
-      cursor: pointer;
-      font-family: var(--font-family);
-    }
-
-    .copy-btn:hover {
-      background: #30363D;
-    }
-
     /* Footer */
     footer {
       border-top: 1px solid var(--border-glass);
-      padding: 40px 0;
+      padding: 24px 0;
       text-align: center;
       color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 80px;
+      font-size: 0.82rem;
+      position: relative;
+      z-index: 10;
     }
 
     footer a {
@@ -423,10 +297,14 @@
       color: var(--accent-blue);
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 2.3rem; }
-      .exhibits-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+    @media (max-width: 640px) {
+      .construction-card {
+        padding: 36px 22px;
+        border-radius: 20px;
+      }
+      h1 { font-size: 1.85rem; }
+      .btn-group { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -434,368 +312,60 @@
   <div class="ambient-glow-1"></div>
   <div class="ambient-glow-2"></div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#" class="nav-brand">
-      <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:6px; background:rgba(41,151,255,0.15); border:1px solid rgba(41,151,255,0.4); font-size:12px; font-weight:800; color:var(--accent-blue);">M</span>
-      MSD <span>//</span> Evidence Lab
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-icon">M</div>
+      <span>Mohamed Said Diab</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#flagship">Flagship Engine</a></li>
-      <li><a href="#exhibits">Visual Exhibits</a></li>
-      <li><a href="#methodologies">Methodologies</a></li>
-      <li><a href="#toolkit">Technical Stack</a></li>
-      <li><a href="#vision">Research Vision</a></li>
-      <li><a href="#team">Investigation Team</a></li>
-      <li><a href="cv.html" style="color:var(--accent-blue); font-weight:600;">Academic CV ↗</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <div style="font-size: 0.82rem; color: var(--text-muted);">MTI Faculty of Medicine</div>
+  </header>
 
-  <div class="container">
-    <!-- Hero Section -->
-    <header class="hero">
-      <div class="badge-tag">Computational Biostatistics &middot; Oncology Evidence Synthesis</div>
+  <main>
+    <div class="construction-card">
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        <span>قيد التطوير والتحديث &middot; Under Active Development</span>
+      </div>
+
       <h1>Mohamed Said Mohamed Diab</h1>
-      <p class="hero-lead">
-        Lead Investigator architecting production-grade computational evidence synthesis engines, graph-theoretical network meta-analyses, and quantitative decision-analytic frameworks in precision oncology.
+      <div class="author-title">Medical Student &middot; Biostatistics &amp; R Programming</div>
+      <div class="affiliation">Faculty of Medicine, Modern University for Technology and Information (MTI), Cairo, Egypt</div>
+
+      <div class="divider"></div>
+
+      <p class="notice-text-ar">
+        الموقع الشخصي ومعرض الأبحاث يخضع حالياً لعملية إعادة تصميم وتطوير شاملة لتبسيط المحتوى وعرض المشاريع البرمجية بصورة واضحة ومباشرة.
       </p>
-      <div class="hero-affiliation" style="display: flex; align-items: center; gap: 10px; margin-bottom: 32px; flex-wrap: wrap;">
-        <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:rgba(41,151,255,0.15); border:1px solid rgba(41,151,255,0.3); color:var(--accent-blue); font-size:11px;">🏛</span>
-        <span style="font-weight: 500; font-size: 1.05rem; color: #C9D1D9;">Faculty of Medicine, Modern University for Technology and Information (MTI), Cairo, Egypt</span>
+
+      <p class="notice-text">
+        This portfolio is currently under redesign to provide a simplified, transparent showcase of medical evidence synthesis workflows and R programming projects.
+      </p>
+
+      <div class="transparency-pill">
+        <strong>🔍 إقرار الشفافية (Transparency Note):</strong> كافة المشاريع البرمجية المفتوحة (مثل مشاريع الميتا-أناليسيس الشبكية) تعتمد على <strong>بيانات تجريبية ومحاكاة افتراضية (Synthetic Benchmark Data)</strong> لأغراض التدريب والتحقق البرمجي فقط، ولا تمثل بيانات مرضى حقيقيين.
       </div>
-      <div class="hero-cta">
-        <a href="https://github.com/mohamed-s-diab/nma-evidence-synthesis" class="btn btn-primary" target="_blank" rel="noopener">
+
+      <div class="btn-group">
+        <a href="https://github.com/mohamed-s-diab" class="btn btn-primary" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          Explore Landmark Repository
+          حساب GitHub
         </a>
-        <a href="https://mohamed-s-diab.github.io/nma-evidence-synthesis/" class="btn btn-secondary" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-          View Live Interactive Monograph
-        </a>
-        <a href="cv.html" class="btn btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          Academic CV
+        <a href="https://github.com/mohamed-s-diab/nma-evidence-synthesis" class="btn btn-secondary" target="_blank" rel="noopener">
+          مستودع كود NMA
         </a>
         <a href="https://orcid.org/0009-0003-3143-387X" class="btn btn-secondary" target="_blank" rel="noopener">
-          <span style="color:#A6CE39; font-weight:700;">iD</span> ORCID Profile
+          معرّف ORCID
         </a>
-        <a href="https://scholar.google.com/citations?user=_tJ3MkYAAAAJ" class="btn btn-secondary" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
-          Google Scholar
-        </a>
-      </div>
-    </header>
-
-    <!-- Flagship Repository Showcase -->
-    <section id="flagship">
-      <div class="card">
-        <div class="card-header-tag">FLAGSHIP RESEARCH ENGINE</div>
-        <h2>Frequentist Network Meta-Analysis Framework (Multi-Treatment Evidence Synthesis)</h2>
-        <p>
-          A publication-grade computational pipeline developed in R (<code>netmeta</code>) evaluating multi-arm, multi-treatment clinical trial evidence.
-        </p>
-
-        <div class="metrics-grid">
-          <div class="metric-pill">
-            <div class="val">15,753</div>
-            <div class="lbl">Synthesized Patients</div>
-          </div>
-          <div class="metric-pill">
-            <div class="val">24 RCTs</div>
-            <div class="lbl">Phase II/III Landmark Trials</div>
-          </div>
-          <div class="metric-pill">
-            <div class="val">12 Engines</div>
-            <div class="lbl">Modular Sequential R Scripts</div>
-          </div>
-          <div class="metric-pill">
-            <div class="val">300 DPI</div>
-            <div class="lbl">Lancet &middot; NEJM Standard Visuals</div>
-          </div>
-        </div>
-
-        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0;">
-          Compliant with PRISMA-NMA (2015), Cochrane Handbook v6, and the GRADE working group transitivity audit. Open-source under MIT License.
-        </p>
-      </div>
-    </section>
-
-    <!-- Visual Exhibits -->
-    <section id="exhibits">
-      <h2 style="font-size:2rem; font-weight:700; margin-bottom:12px;">Landmark Empirical Visual Exhibits</h2>
-      <p style="color:var(--text-secondary); margin-bottom:20px;">
-        Vector-grade 300 DPI scientific visualizations generated directly by the R analytical modules.
-      </p>
-
-      <div class="exhibits-grid">
-        <div class="exhibit-item">
-          <img src="https://raw.githubusercontent.com/mohamed-s-diab/nma-evidence-synthesis/main/outputs/figures/01_network_geometry.png" alt="Evidence Network Geometry" loading="lazy">
-          <div class="caption">
-            <strong>Figure 01 &middot; Evidence Network Geometry:</strong> Multi-arm star-loop topology interconnecting 24 landmark trials without unbridged islands.
-          </div>
-        </div>
-        <div class="exhibit-item">
-          <img src="https://raw.githubusercontent.com/mohamed-s-diab/nma-evidence-synthesis/main/outputs/figures/11_benefit_risk_tradeoff.png" alt="Benefit-Risk Trade-Off Plane" loading="lazy">
-          <div class="caption">
-            <strong>Figure 11 &middot; Benefit-Risk Trade-Off Plane:</strong> Bivariate mapping of Overall Survival Hazard Ratios versus Severe Grade 3&ndash;5 Toxicities Odds Ratios across 14,357 patients.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Methodological Matrix -->
-    <section id="methodologies" style="margin-top:60px;">
-      <h2 style="font-size:2rem; font-weight:700; margin-bottom:12px;">Methodological Matrix &amp; Rigor</h2>
-      <p style="color:var(--text-secondary); margin-bottom:20px;">
-        Advanced biostatistical paradigms and epidemiological architectures applied across all pipelines.
-      </p>
-
-      <div class="method-grid">
-        <div class="method-card">
-          <h3>🧬 Evidence Synthesis</h3>
-          <ul>
-            <li>Frequentist Graph Theory (Laplacian Inversion)</li>
-            <li>Bayesian Hierarchical Modeling (MCMC)</li>
-            <li>Component Network Meta-Analysis (Additivity)</li>
-            <li>Design-by-Treatment Interaction Tests</li>
-            <li>Node-Splitting Local Inconsistency Audits</li>
-          </ul>
-        </div>
-        <div class="method-card">
-          <h3>⚖️ Bias &amp; Selection Models</h3>
-          <ul>
-            <li>Copas Selection Models (Missing Study Imputation)</li>
-            <li>Contour-Enhanced Funnel Plots &amp; Egger Tests</li>
-            <li>Cochrane RoB 2.0 &amp; ROBINS-I Protocols</li>
-            <li>Penalized Likelihood (Firth Logistic Regression)</li>
-            <li>Beta-Binomial Models for Sparse Event Data</li>
-          </ul>
-        </div>
-        <div class="method-card">
-          <h3>📊 Decision Analytics</h3>
-          <ul>
-            <li>Frequentist P-Scores &amp; Bayesian SUCRA Surfaces</li>
-            <li>10,000-Scenario Monte Carlo Hierarchy Simulations</li>
-            <li>ASCO / ESMO MCID Relative Benefit Thresholds</li>
-            <li>Bivariate Benefit-Risk Trade-Off Planes</li>
-            <li>GRADE Working Group (CINeMA) Framework</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Stack & Methodological Tooling Section -->
-    <section id="toolkit" style="margin-top:60px;">
-      <div style="margin-bottom:24px;">
-        <div class="card-header-tag">COMPUTATIONAL CORE &amp; STANDARDS</div>
-        <h2 style="font-size:2rem; font-weight:700;">Technical Stack &amp; Methodological Tooling</h2>
-        <p style="color:var(--text-secondary); margin-bottom:0;">Production-grade toolchains and international scientific standards implemented across the research pipeline.</p>
-      </div>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-            <span style="font-size:1.5rem;">🧬</span>
-            <h3 style="font-size:1.1rem; color:#FFFFFF; margin-bottom:0;">Biostatistical Modeling</h3>
-          </div>
-          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:12px;">Mathematical graph models and likelihood engines:</p>
-          <div style="display:flex; flex-wrap:wrap; gap:6px;">
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">R Language</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">netmeta</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">metafor</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Laplacian Inversion</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Bayesian MCMC (JAGS)</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Copas Models</span>
-          </div>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-            <span style="font-size:1.5rem;">📋</span>
-            <h3 style="font-size:1.1rem; color:#FFFFFF; margin-bottom:0;">Evidence Frameworks</h3>
-          </div>
-          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:12px;">Rigorous compliance and clinical appraisal:</p>
-          <div style="display:flex; flex-wrap:wrap; gap:6px;">
-            <span style="background:rgba(63,185,80,0.12); color:var(--accent-green); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">PRISMA-NMA (32-item)</span>
-            <span style="background:rgba(63,185,80,0.12); color:var(--accent-green); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Cochrane RoB 2.0</span>
-            <span style="background:rgba(63,185,80,0.12); color:var(--accent-green); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">ROBINS-I</span>
-            <span style="background:rgba(63,185,80,0.12); color:var(--accent-green); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">GRADE Profiles</span>
-            <span style="background:rgba(63,185,80,0.12); color:var(--accent-green); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">CINeMA Auditing</span>
-            <span style="background:rgba(63,185,80,0.12); color:var(--accent-green); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">ICMJE Guidelines</span>
-          </div>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-            <span style="font-size:1.5rem;">🎨</span>
-            <h3 style="font-size:1.1rem; color:#FFFFFF; margin-bottom:0;">Visual &amp; Publishing</h3>
-          </div>
-          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:12px;">Vector graphics and reproducible reporting:</p>
-          <div style="display:flex; flex-wrap:wrap; gap:6px;">
-            <span style="background:rgba(163,113,247,0.12); color:var(--accent-purple); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">ggplot2</span>
-            <span style="background:rgba(163,113,247,0.12); color:var(--accent-purple); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">patchwork</span>
-            <span style="background:rgba(163,113,247,0.12); color:var(--accent-purple); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">300-DPI Exhibits</span>
-            <span style="background:rgba(163,113,247,0.12); color:var(--accent-purple); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Vector SVG &amp; PDF</span>
-            <span style="background:rgba(163,113,247,0.12); color:var(--accent-purple); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">R Markdown</span>
-            <span style="background:rgba(163,113,247,0.12); color:var(--accent-purple); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">BibTeX / CFF</span>
-          </div>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-            <span style="font-size:1.5rem;">⚙️</span>
-            <h3 style="font-size:1.1rem; color:#FFFFFF; margin-bottom:0;">Scientific Engineering</h3>
-          </div>
-          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:12px;">Version control and open science infrastructure:</p>
-          <div style="display:flex; flex-wrap:wrap; gap:6px;">
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Git &amp; GitHub</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">GitHub Pages</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Reproducible Seeds</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Dual Exhibits</span>
-            <span style="background:rgba(41,151,255,0.12); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.78rem; font-weight:600;">Open Source MIT</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Research Vision & Strategic Directions Section -->
-    <section id="vision" style="margin-top:60px;">
-      <div style="margin-bottom:24px;">
-        <div class="card-header-tag">ACADEMIC HORIZON</div>
-        <h2 style="font-size:2rem; font-weight:700;">Research Vision &amp; Strategic Directions</h2>
-        <p style="color:var(--text-secondary); margin-bottom:0;">Bridging high-dimensional clinical evidence synthesis with precision oncology and quantitative decision science.</p>
-      </div>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:18px;">
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <h3 style="font-size:1.15rem; color:#FFFFFF; margin-bottom:10px;">🎯 Precision Immuno-Oncology</h3>
-          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin-bottom:0;">
-            Deconstructing differential survival benefits and toxicity trade-offs in immune checkpoint inhibitor combinations (anti-PD-1/PD-L1 + anti-CTLA-4) stratified by molecular and histopathologic biomarkers (PD-L1 TPS/CPS expression, tumor mutational burden, and genomic driver alterations).
-          </p>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <h3 style="font-size:1.15rem; color:#FFFFFF; margin-bottom:10px;">⚖️ Advanced Sparse Synthesis</h3>
-          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin-bottom:0;">
-            Formulating robust penalization algorithms (Firth logistic regression) and exact beta-binomial frameworks for zero-event treatment arms, coupled with Copas non-ignorable selection modeling to account for reporting and publication biases in competitive trial landscapes.
-          </p>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <h3 style="font-size:1.15rem; color:#FFFFFF; margin-bottom:10px;">🩺 Health Economics &amp; Value of Information</h3>
-          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin-bottom:0;">
-            Integrating network meta-analytic effect vectors into decision-analytic Markov state-transition models, minimal clinically important difference (MCID) frontiers, and Expected Value of Perfect Information (EVPI) distributions to guide evidence-based health technology assessment.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Citation Section -->
-    <section id="citation" style="margin-top:60px;">
-      <div class="card">
-        <div class="card-header-tag">SCHOLARLY ATTRIBUTION</div>
-        <h2>Cite the Evidence Synthesis Engine</h2>
-        <p>To reference this computational framework or evidence synthesis pipeline in academic publications or clinical guidelines, please use the format below:</p>
-
-        <div class="citation-box" id="citationText">@software{diab2026_reproducible_nma,
-  author       = {Diab, Mohamed Said Mohamed and Ali, Badr Essam and Hafez, Ali Hassan and Mousa, Omar Gomaa and Fathy, Mahmoud Hussein},
-  title        = {Reproducible Frequentist Network Meta-Analysis Framework (Multi-Treatment Evidence Synthesis)},
-  year         = {2026},
-  version      = {1.0.0},
-  publisher    = {GitHub},
-  url          = {https://github.com/mohamed-s-diab/nma-evidence-synthesis},
-  note         = {Faculty of Medicine, Modern University for Technology and Information (MTI), Cairo, Egypt}
-}</div>
-        <button class="copy-btn" onclick="copyCitation()">Copy BibTeX</button>
-      </div>
-    </section>
-
-    <!-- Investigation Working Group Section -->
-    <section id="team" style="margin-top:60px;">
-      <div style="margin-bottom:24px;">
-        <div class="card-header-tag">MTI FACULTY OF MEDICINE</div>
-        <h2 style="font-size:2rem; font-weight:700;">Investigation Working Group</h2>
-        <p style="color:var(--text-secondary); margin-bottom:0;">Evidence synthesis researchers adhering to ICMJE guidelines and PRISMA dual-extraction protocols.</p>
-      </div>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:18px;">
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:6px;">
-            <h3 style="font-size:1.15rem; color:#FFFFFF;">Mohamed Said Mohamed Diab</h3>
-            <span style="background:rgba(41,151,255,0.15); color:var(--accent-blue); padding:3px 8px; border-radius:6px; font-size:0.75rem; font-weight:700;">Lead Investigator</span>
-          </div>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">Faculty of Medicine, MTI &middot; <a href="mailto:Mohamed.98478@Medicine.mti.edu.eg" style="color:var(--accent-blue);">Mohamed.98478@Medicine.mti.edu.eg</a></p>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0;"><strong>CRediT:</strong> Conceptualization, protocol design, search formulation, Bayesian NMA modeling, data extraction, manuscript drafting.</p>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <h3 style="font-size:1.15rem; color:#FFFFFF; margin-bottom:6px;">Badr Essam Ali</h3>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">Faculty of Medicine, MTI &middot; <a href="mailto:Badr.98633@Medicine.mti.edu.eg" style="color:var(--accent-blue);">Badr.98633@Medicine.mti.edu.eg</a></p>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0;"><strong>CRediT:</strong> Dual-independent study selection, clinical data extraction, cross-auditing and quality checks.</p>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <h3 style="font-size:1.15rem; color:#FFFFFF; margin-bottom:6px;">Ali Hassan Hafez</h3>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">Faculty of Medicine, MTI &middot; <a href="mailto:Ali.98637@Medicine.mti.edu.eg" style="color:var(--accent-blue);">Ali.98637@Medicine.mti.edu.eg</a></p>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0;"><strong>CRediT:</strong> Dual-independent study selection, numeric data extraction, tabular matrix synthesis.</p>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <h3 style="font-size:1.15rem; color:#FFFFFF; margin-bottom:6px;">Omar Gomaa Mousa</h3>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">Faculty of Medicine, MTI &middot; <a href="mailto:Omar.98550@Medicine.mti.edu.eg" style="color:var(--accent-blue);">Omar.98550@Medicine.mti.edu.eg</a></p>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0;"><strong>CRediT:</strong> Dual-independent study selection, Cochrane RoB 2.0 dual appraisal, verification of numeric inputs.</p>
-        </div>
-
-        <div class="card" style="margin-bottom:0; padding:24px;">
-          <h3 style="font-size:1.15rem; color:#FFFFFF; margin-bottom:6px;">Mahmoud Hussein Fathy</h3>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">Faculty of Medicine, MTI &middot; <a href="mailto:Mahmoud.103608@Medicine.mti.edu.eg" style="color:var(--accent-blue);">Mahmoud.103608@Medicine.mti.edu.eg</a></p>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0;"><strong>CRediT:</strong> Dual-independent study selection, CINeMA certainty evaluation, supplementary appendix synthesis.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Advisory -->
-    <section id="contact" style="margin-top:60px; text-align:center;">
-      <h2 style="font-size:2rem; font-weight:700; margin-bottom:16px;">Academic Collaboration &amp; Advisory</h2>
-      <p style="color:var(--text-secondary); max-width:680px; margin:0 auto 32px; font-size:1.05rem;">
-        Available for collaborative systematic reviews, Bayesian/Frequentist network meta-analyses, and quantitative decision-analytic modeling for high-impact oncology research and clinical practice guideline synthesis.
-      </p>
-      <div style="display:inline-flex; gap:16px; flex-wrap:wrap; justify-content:center;">
-        <a href="mailto:Mohamed.98478@Medicine.mti.edu.eg" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Mohamed.98478@Medicine.mti.edu.eg
-        </a>
-        <a href="https://orcid.org/0009-0003-3143-387X" class="btn btn-secondary" target="_blank" rel="noopener">
-          ORCID Record
-        </a>
-        <a href="https://scholar.google.com/citations?user=_tJ3MkYAAAAJ" class="btn btn-secondary" target="_blank" rel="noopener">
-          Google Scholar
-        </a>
-        <a href="https://www.researchgate.net/profile/Mohamed-Said-Mohamed-Diab" class="btn btn-secondary" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#00CCBB"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-1.128-.888C14.65.114 13.978 0 13.16 0c-.98 0-1.84.184-2.58.553a5.55 5.55 0 0 0-1.92 1.547 7.02 7.02 0 0 0-1.192 2.378c-.266.925-.4 1.94-.4 3.045 0 1.107.134 2.122.4 3.047.266.924.664 1.718 1.192 2.38.528.663 1.168 1.178 1.92 1.547.74.368 1.6.553 2.58.553.818 0 1.49-.114 2.012-.34.524-.228.9-.524 1.128-.888.243.744.65 1.303 1.213 1.68.565.376 1.255.565 2.073.565.922 0 1.724-.247 2.406-.74.68-.493 1.2-1.182 1.56-2.068.36-.885.54-1.91.54-3.076 0-1.165-.18-2.19-.54-3.075-.36-.886-.88-1.575-1.56-2.068-.682-.493-1.484-.74-2.406-.74zm-6.426 12.825c-.538 0-1.002-.116-1.392-.348-.39-.232-.71-.564-.96-.995-.25-.432-.43-.96-.54-1.583-.11-.624-.165-1.332-.165-2.124 0-.792.055-1.5.165-2.124.11-.623.29-1.15.54-1.583.25-.43.57-.763.96-.995.39-.232.854-.348 1.392-.348.538 0 1.002.116 1.392.348.39.232.71.564.96.995.25.432.43.96.54 1.583.11.624.165 1.332.165 2.124 0 .792-.055 1.5-.165 2.124-.11.623-.29 1.15-.54 1.583-.25.43-.57.763-.96.995-.39.232-.854-.348-1.392-.348z"/></svg>
-          ResearchGate
+        <a href="mailto:Mohamed.98478@Medicine.mti.edu.eg" class="btn btn-secondary">
+          تواصل عبر البريد
         </a>
       </div>
-    </section>
-  </div>
+    </div>
+  </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2026 Mohamed Said Mohamed Diab &middot; Lead Investigator &middot; Faculty of Medicine, MTI</p>
-      <p style="margin-top:8px;">Designed with Cupertino Minimalism &middot; Powered by R, Open Science &amp; GitHub Pages</p>
-    </div>
+    <p>&copy; 2026 Mohamed Said Mohamed Diab &middot; Faculty of Medicine, MTI &middot; Cairo, Egypt</p>
+    <p style="margin-top: 4px; font-size: 0.78rem;">Designed with simplicity and transparency &middot; Hosted on GitHub Pages</p>
   </footer>
-
-  <script>
-    function copyCitation() {
-      const text = document.getElementById("citationText").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector(".copy-btn");
-        btn.innerText = "✓ Copied!";
-        setTimeout(() => { btn.innerText = "Copy BibTeX"; }, 2500);
-      });
-    }
-  </script>
 </body>
 </html>
